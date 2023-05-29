@@ -13,6 +13,7 @@ const arenaConfig = Arena({
 
       // Name of the bull queue, this name must match up exactly with what you've defined in bull.
       name: "NewsQueue",
+      
 
       // Hostname or queue prefix, you can put whatever you want.
       hostId: "NewsQueue",
@@ -23,7 +24,42 @@ const arenaConfig = Arena({
         host:Redis_host,
         
       }
-    }
+    },
+    {
+      type: 'bull',
+
+      // Name of the bull queue, this name must match up exactly with what you've defined in bull.
+      name: "feedQueue",
+      
+
+      // Hostname or queue prefix, you can put whatever you want.
+      hostId: "feedQueue",
+
+      // Redis auth.
+      redis: {
+        port: Redis_port,
+        host:Redis_host,
+        
+      }
+    },
+    {
+      type: 'bull',
+
+      // Name of the bull queue, this name must match up exactly with what you've defined in bull.
+      name:"channelQueue",
+      
+
+      // Hostname or queue prefix, you can put whatever you want.
+      hostId: "channelQueue",
+
+      // Redis auth.
+      redis: {
+        port: Redis_port,
+        host:Redis_host,
+        
+      }
+    },
+
   ],
 
   
@@ -35,4 +71,4 @@ const arenaConfig = Arena({
 });
 
 // Make arena's resources (js/css deps) available at the base app route
-app.use('/' , arenaConfig) 
+module.exports = arenaConfig

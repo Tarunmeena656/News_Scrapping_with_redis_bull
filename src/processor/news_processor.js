@@ -1,4 +1,4 @@
-const {Selector} = require('../utils/Selector')
+const Selector = require('../temp/Selector')
 const { Browser } = require('../service/puppeteer_service');
 const NewsModel = require('../models/feedNews')
 

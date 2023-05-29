@@ -1,10 +1,12 @@
 require('dotenv').config()
 const express = require('express');
-const connection = require('./conn/connection')
+const connection = require('./conn/connection');
 const indexRouter = require('./route/index_router');
 const { Browser } = require('./service/puppeteer_service');
+
 const app = express();
 const port = parseInt(process.env.PORT || 8000);
+
 
 
 require('./processor/index')
@@ -16,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(indexRouter)
+
 
 
 //connection

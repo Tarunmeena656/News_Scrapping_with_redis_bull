@@ -1,6 +1,6 @@
 var validUrl = require("valid-url");
 const cheerio = require("cheerio");
-const { Selector } = require("./Selector");
+const Selector = require('../temp/Selector')
 const axios = require("axios");
 const FeedModel = require("../models/feed");
 
